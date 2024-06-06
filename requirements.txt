@@ -1,0 +1,7 @@
+fastapi # Fast API
+uvicorn # Web Server
+python-dotenv # Loading secret information
+jinja2 # HTML Templates
+fastapi-authlib # Oauth
+psycopg2-binary # PostgreSQL
+boto3 # AWS
