@@ -1,11 +1,49 @@
 """Provides a higher-level API to a Postgres resource"""
 
+import psycopg2
 from psycopg2 import sql
 
-# Determine where the data source is defined
-from aws_aurora import postgres_db_connect as _db_connect
+import sys
+from os import path
+sys.path.append(
+    path.join(path.dirname(__file__), '../..')
+)
 
-def _execute(sql_query: str, placeholders: tuple[str] = None, data = None, db_name = "doylead"):
+# Determine where the data source is defined
+DATABASE_LOC = "docker"
+
+# If running postgres on Aurora
+if DATABASE_LOC == "Aurora":
+    from app.config import AWS_RDS_ENDPOINT as HOST
+    from app.aws_utils.aurora import (POSTGRES_DB as DATABASE,
+                                      POSTGRES_USER as USER,
+                                      POSTGRES_PASSWORD as PASSWORD)
+
+# If running postgres in Docker/locally
+if DATABASE_LOC == "docker":
+    from app.docker_utils.docker_postgres import (POSTGRES_HOST as HOST,
+                                                  POSTGRES_DB as DATABASE,
+                                                  POSTGRES_USER as USER,
+                                                  POSTGRES_PASSWORD as PASSWORD)
+                                              
+def _db_connect(database = DATABASE):
+    """Connects to Aurora Postgres instance"""
+    # Attempt to connect to the database.  If operations fail,
+    # print error
+    try:
+        conn = psycopg2.connect(database = database,
+                                host = HOST,
+                                user = USER,
+                                password = PASSWORD,
+                                port = "5432",
+                                sslrootcert = "SSLCERTIFICATE")
+
+    except Exception as e:
+        print(f"Database connection failed due to {e}")
+
+    return conn
+
+def _execute(sql_query: str, placeholders: tuple[str] = None, data = None, db_name = DATABASE):
     """Allows running a SQL query, allows for DRY principle in code"""
 
     # Takes as input a static, numbered, or auto-numbered SQL query to be run

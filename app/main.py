@@ -7,7 +7,7 @@ from starlette.requests import Request
 from starlette.responses import RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
 from app.routers import google_authentication
-from .config import APP_SECRET_KEY, CONTACT_EMAIL, CONTACT_NAME
+from app.config import APP_SECRET_KEY, CONTACT_EMAIL, CONTACT_NAME
 
 # TODO: When ready to add tag information to document methods
 # https://fastapi.tiangolo.com/tutorial/metadata/

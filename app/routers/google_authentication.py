@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 from starlette.responses import RedirectResponse
 from authlib.integrations.starlette_client import OAuth, OAuthError
-from ..config import CLIENT_ID, CLIENT_SECRET
+from app.config import CLIENT_ID, CLIENT_SECRET
 
 # Allows us to route to endpoints in this file
 router = APIRouter()
