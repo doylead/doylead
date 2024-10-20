@@ -6,9 +6,10 @@ date: 2024-10-15
 # Background Noise and Context
 
 A few notable events immediately preceed this work:
-* On August 26th, 2024 I got access to Gemini Advanced, Google's flagship consumer AI product (as a promotion, because I bought a Pixel 9 Pro XL).
-* On September 12th, 2024 OpenAI released it's o1 model preview.
-* On October 11th, 2024 a coworker I trust told me that they believed candidates for software engineering roles would be better served by experience using AI than experience developing software.
+
+- On August 26th, 2024 I got access to Gemini Advanced, Google's flagship consumer AI product (as a promotion, because I bought a Pixel 9 Pro XL).
+- On September 12th, 2024 OpenAI released it's o1 model preview.
+- On October 11th, 2024 a coworker I trust told me that they believed candidates for software engineering roles would be better served by experience using AI than experience developing software.
 
 I have had a lot of fun asking it to rank whether various things are sandwiches (apparently burritos are sandwiches, tacos are not).  That said, I've been hesitant to use AI more seriously.  I think this has come down to two major arguments:
 1) AI can "hallucinate," or produce nonsense results.  It's essentially a meme that AI models have told people to [eat rocks and glue](https://www.thedailybeast.com/google-explains-why-its-ai-overviews-told-users-to-eat-rocks-and-glue-pizzas)
@@ -20,7 +21,7 @@ This project is my attempt to study and use AI to develop software.
 
 ## Setting Up A Blog
 
-The full transcript with Gemini Advanced referenced in this post can be found [here](/transcripts/13-Oct-2024_AI.md).
+The full transcript with Gemini Advanced referenced in this post can be found [here](/transcripts/15-Oct-2024_AI).
 
 I've historically avoided front-end work.  Making "artistic" choices has always felt more stressful to me than working with APIs.  That said, just accepting a skills gap is not conducive to growth.  
 
